@@ -9,10 +9,17 @@
 }
 
 .img {
-  
+  /* border: 1px solid red; */ /*Debug*/
   width: 100%;
   max-width: 150px;
   height: auto;
   max-height: 150px;
   object-fit: contain;
+  transform: scale(1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img:hover {
+  transform: scale(1.15);
 }

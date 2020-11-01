@@ -5,21 +5,21 @@ import Photo from "./Photo";
 export default function PhotoGrid(props) {
   return (
     <div className={styles.grid}>
+      <Photo photoSrc = "/images/a.jpg" />
+      <Photo photoSrc = "/images/b.jpg" />
+      <Photo photoSrc = "/images/c.jpg" />
       <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
-      <Photo photoSrc = "/images/d.jpg" />
+      <Photo photoSrc = "/images/e.jpg" />
+      <Photo photoSrc = "/images/f.jpg" />
+      <Photo photoSrc = "/images/g.jpg" />
+      <Photo photoSrc = "/images/h.jpg" />
+      <Photo photoSrc = "/images/i.jpg" />
+      <Photo photoSrc = "/images/j.jpg" />
+      <Photo photoSrc = "/images/k.jpg" />
+      <Photo photoSrc = "/images/l.jpg" />
+      <Photo photoSrc = "/images/m.jpg" />
+      <Photo photoSrc = "/images/n.jpg" />
+      <Photo photoSrc = "/images/o.jpg" />
       
     
       
