@@ -1,10 +1,9 @@
 .photo {
-  flex-basis: calc((100% / 5) ); /* 5 photos */
+  flex-basis: calc((100% / 5)); /* 5 photos */
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .img {
@@ -18,12 +17,21 @@
   transform: scale(1);
   cursor: pointer;
   display: block;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  
+  
 }
 
-.img:hover{ 
-  transform: scale(1.125);
+.img:hover {
+  transform: scale(1.2);
 }
 
+.placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  max-height: 150px;
+  background: #efefef;
 
-
+}
