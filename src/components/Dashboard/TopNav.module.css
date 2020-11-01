@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  position: static;
+  left: 0;
+  width:100vw;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.item {
+  color:black;
+  margin:20px 50px;
+}
+
+.brand {
+
+
+}
+
+.about {
+
+}
