@@ -2,15 +2,15 @@
   display: flex;
   position: static;
   left: 0;
-  
+  top:0;  
   flex-direction: row;
   justify-content: space-between;
-
+  
 }
 
 .item {
   color:#111;
-  margin:30px 70px;
+  margin: 20px 70px;
   font-size: 14pt;
   font-weight: 600;
   cursor: pointer;

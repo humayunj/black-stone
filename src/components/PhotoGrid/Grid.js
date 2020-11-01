@@ -15,11 +15,8 @@ export default function PhotoGrid(props) {
       <Photo photoSrc = "/images/h.jpg" />
       <Photo photoSrc = "/images/i.jpg" />
       <Photo photoSrc = "/images/j.jpg" />
-      <Photo photoSrc = "/images/k.jpg" />
-      <Photo photoSrc = "/images/l.jpg" />
-      <Photo photoSrc = "/images/m.jpg" />
-      <Photo photoSrc = "/images/n.jpg" />
-      <Photo photoSrc = "/images/o.jpg" />
+      
+      
       
     
       
