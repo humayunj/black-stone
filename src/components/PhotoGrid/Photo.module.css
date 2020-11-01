@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   
-  
 }
 
 .img {
@@ -16,26 +15,15 @@
   height: auto;
   max-height: 150px;
   object-fit: contain;
-  /* transform: scale(1); */
+  transform: scale(1);
   cursor: pointer;
   display: block;
-  transform-origin: 50% 50%;
-  /* transform: translate(0,0); */
-  transition: all 2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out;
 }
 
-.img:hover {
-  transform: scale(1.15);
+.img:hover{ 
+  transform: scale(1.125);
 }
-.img.full:hover {
-  transform:none;
-}
-.img.full {
-  position : fixed;
-  z-index: 1;
-  background:#fffa;
-  transition: all 2s ease-in-out 0s;
-  cursor:default;
-  left: calc(50vw - 70px);
-  top:50vh;
-}
+
+
+
