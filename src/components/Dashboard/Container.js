@@ -1,11 +1,12 @@
 import React from "react";
 import TopNav from "./TopNav";
+import PhotoGrid from "../PhotoGrid/Grid";
 
 export default function DashboardContainer(props) {
   return (
-    <div>
+    <div styles="1000px">
       <TopNav/>
-      <h1>Dashboard</h1>
+      <PhotoGrid/>
     </div>
   );
-}
+} 

@@ -2,19 +2,22 @@
   display: flex;
   position: static;
   left: 0;
-  width:100vw;
+  
   flex-direction: row;
   justify-content: space-between;
 
 }
 
 .item {
-  color:black;
-  margin:20px 50px;
+  color:#111;
+  margin:30px 70px;
+  font-size: 14pt;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .brand {
-
+  
 
 }
 
