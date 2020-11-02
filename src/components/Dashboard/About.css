@@ -64,11 +64,14 @@ ul>li{
         flex-direction: column;
         height: 100vh;
     }
+    .self-container {
+        margin: 0 auto;
+    }
     .self_intro{
         flex:0;
         margin-top: 100px;
         max-width: 300px;
-        
+        margin-left: 0;
     }
     .self_detail{
         margin-top: 50px;
@@ -76,11 +79,12 @@ ul>li{
         width:80vw;
         margin:0 auto;
         margin-top: 100px;
-        
+        margin-left: 0;
     }
     
     .self_detail>ul{
         margin-left: 0;
+        padding:0;
     }
 }
   

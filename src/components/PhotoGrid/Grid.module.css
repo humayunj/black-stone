@@ -1,17 +1,38 @@
 .grid {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 920px;
-  margin:0 auto;
+  margin: 0 auto;
   justify-content: space-around;
   align-items: center;
   margin-top: 9%;
-  
 }
 
+.footer {
+  margin: 50px auto;
+  width: max-content;
+  padding: 10px 30px;
+  font-weight: 600;
+  /* color: black;
+  background: transparent; */
+  color: white;
+  background: black;
 
-@media screen and (max-width:480px) {
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+  font-size: 14pt;
+  letter-spacing: -0.5px;
+  /* border-radius: 10px; */
+}
+
+.footer > span {
+  margin: 0 5px;
+}
+.footer:hover {
+}
+
+@media screen and (max-width: 480px) {
   .grid {
     /* flex-direction: column; */
     /* justify-content: center; */

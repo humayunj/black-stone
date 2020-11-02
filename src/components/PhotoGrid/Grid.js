@@ -5,6 +5,12 @@ import usePhotos from "../../lib/usePhotos";
 import PhotoModal from "../PhotoGrid/PhotoModal";
 import { useState } from "react";
 
+export function Footer(props) {
+  return <div className={styles.footer}>
+    aesthetics <span>❤</span>
+  </div>;
+}
+
 export default function PhotoGrid(props) {
   const [photos, loadPhotos] = usePhotos();
   const [modalIndex, setModalIndex] = useState(-1);
@@ -24,7 +30,7 @@ export default function PhotoGrid(props) {
             ))
           : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => <Photo photoSrc="" />)}
       </div>
-
+      <Footer />
       {photos && modalIndex > -1 && (
         <PhotoModal
           photoList={photos}
