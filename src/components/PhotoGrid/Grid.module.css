@@ -9,3 +9,12 @@
   margin-top: 9%;
   
 }
+
+
+@media screen and (max-width:480px) {
+  .grid {
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    margin-top: 20%;
+  }
+}

@@ -30,3 +30,10 @@
 .about {
 
 }
+
+
+@media screen and (max-width:480px) {
+  .item {
+    margin:20px 20px;
+  }
+}

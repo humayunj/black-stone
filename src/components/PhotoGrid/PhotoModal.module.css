@@ -13,24 +13,21 @@
 }
 
 .image {
-  width:auto;
+  width: auto;
   object-fit: contain;
   height: 80vh;
   visibility: visible;
-  
 }
 .image.loading {
   visibility: hidden;
 }
-
-
 
 .icon {
   position: fixed;
   transform-origin: 50% 50%;
   transform: translateY(-50%);
   border: 2px solid #ccc0;
-  color:#888;
+  color: #888;
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -45,7 +42,6 @@
 
 .icon:hover {
   border-color: #888;
-   
 }
 .previous {
   left: 10vw;
@@ -57,21 +53,47 @@
 
 .cross {
   left: calc(90vw - 50px);
-  top:10vh;
-  color:black;
+  top: 10vh;
+  color: black;
   font-size: 15px;
-  
 }
 .cross:hover {
   border-color: black;
 }
 .placeholder {
-  height:80vh;
-  width:30vw;
+  height: 80vh;
+  width: 30vw;
   background-color: #eee;
-
-
   position: fixed;
-  
-  
+}
+
+
+
+@media screen and (max-width:480px) {
+  .image {
+    width:100vw;
+    height:auto;
+  }
+  .cross {
+    top:30px;
+    left:unset;
+    right:10px;
+    
+  }
+  .icon {
+    background-color: #fff3;
+    color:#222;
+    
+  }
+  .previous {
+    left: 20px;
+  }
+  .next {
+    left:unset;
+    right:20px;
+  }
+  .placeholder {
+    width:100vw;
+    height:80vh
+  }
 }

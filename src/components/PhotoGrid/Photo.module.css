@@ -6,6 +6,8 @@
   align-items: center;
 }
 
+
+
 .img {
   /* border: 1px solid red; */ /*Debug*/
   position: relative;
@@ -34,4 +36,13 @@
   max-height: 150px;
   background: #efefef;
 
+}
+
+
+
+@media screen and (max-width:480px) {
+  .photo {
+    flex-basis: calc(100% / 2); /* 2 photos */
+  
+  } 
 }
