@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 import PhotoGrid from "../PhotoGrid/Grid";
 import TopNav from "./TopNav";
-import About from './About'
-import './About.css'
+import About from "./About";
+import "./About.css";
+import  PhotoModal  from "../PhotoGrid/PhotoModal";
 
 export default function DashboardContainer(props) {
-  const [defClass,setdefClass] = useState({
-    'display':'none',
-    'maxHeight':'0vh',
-    'photo':'block',
-  })
-    
+  const [about, toggleAbout] = useState(false);
+
   return (
     <div>
-      <TopNav setAbout={setdefClass}/>
-      <div style={{display:defClass.photo}}>
-          <PhotoGrid/>
+      <TopNav expanded={about} setAbout={() => toggleAbout(s =>!s)} />
+      <div>
+        <PhotoGrid />
       </div>
-      <div className="about_container" style = {{display:defClass.display,height:defClass.height,maxHeight:defClass.maxHeight }}>
-        <About></About>
-      </div>
+      <About expanded={about} />
+      
     </div>
   );
-} 
-
-
-
+}
