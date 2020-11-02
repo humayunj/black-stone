@@ -62,14 +62,25 @@ ul>li{
 @media screen and (max-width: 480px) {
     .about_page{
         flex-direction: column;
+        height: 100vh;
     }
     .self_intro{
-        width: 75%;
-        margin-left: -20px;
+        flex:0;
+        margin-top: 100px;
+        max-width: 300px;
+        
     }
     .self_detail{
-        width: 85%;
-        margin-left: -90px;
+        margin-top: 50px;
+        flex:1;
+        width:80vw;
+        margin:0 auto;
+        margin-top: 100px;
+        
+    }
+    
+    .self_detail>ul{
+        margin-left: 0;
     }
 }
   

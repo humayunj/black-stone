@@ -105,6 +105,7 @@ const About = ({ expanded }) => {
 
   return (
     <div className={`about_page ${expanded?'expanded':''} `}  >
+      <div className="self-container">
       <div className="self_intro">
         <h1>Usama Rehman</h1>
         <p>
@@ -128,6 +129,7 @@ const About = ({ expanded }) => {
             <Gmail></Gmail>blackStone_440@gmail.com
           </li>
         </ul>
+      </div>
       </div>
     </div>
   );
