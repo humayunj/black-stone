@@ -51,7 +51,6 @@ export default function PhotoModal({ photoList, startIndex,hideModal }) {
     opacity:1,from:{opacity:0}
   })
 
-  console.log("RENDER");
   return (
     <animated.div style={mainProps} className={S.modal} >
       <div className={`${S.icon} ${S.previous}`} onClick={prevPhoto}>
@@ -62,7 +61,7 @@ export default function PhotoModal({ photoList, startIndex,hideModal }) {
         <img
           className={`${S.image} ${loading ? S.loading : ""} `}
           onLoad={loaded}
-          src={`${photoList[index].imageMain.url}`}
+          src={`${photoList[index].md}`}
         />
       </animated.div>
       {loading && <Placeholder />}

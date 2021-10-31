@@ -101,35 +101,29 @@ const Call = () => {
 };
 
 const About = ({ expanded }) => {
-  
-
   return (
-    <div className={`about_page ${expanded?'expanded':''} `}  >
+    <div className={`about_page ${expanded ? "expanded" : ""} `}>
       <div className="self-container">
-      <div className="self_intro">
-        <h1>Usama Rehman</h1>
-        <p>
-          Photography is the art, application and practice of creating durable
-          images by recording light, either electronically by means of an image
-          sensor, or chemically
-        </p>
-      </div>
-      <div className="self_detail">
-        <ul>
-          <li>
-            <FaceIcon></FaceIcon>blackStone
-          </li>
-          <li>
-            <Instagram></Instagram>black_stone
-          </li>
-          <li>
-            <Call></Call>+92 308 701 1212
-          </li>
-          <li>
-            <Gmail></Gmail>blackStone_440@gmail.com
-          </li>
-        </ul>
-      </div>
+        <div className="self_intro">
+          <h1>Usama Rehman</h1>
+          <p>Wedding | Portrait | Product</p>
+        </div>
+        <div className="self_detail">
+          <ul>
+            <li>
+              <FaceIcon></FaceIcon>blackStone
+            </li>
+            <li>
+              <Instagram></Instagram>black_stone
+            </li>
+            <li>
+              <Call></Call>+92 308 701 1212
+            </li>
+            <li>
+              <Gmail></Gmail>blackStone_440@gmail.com
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

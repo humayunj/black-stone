@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import API from "../API";
 export default function usePhotos() {
   let [photosList, setPhotosList] = useState(null);
 
@@ -17,21 +17,24 @@ query MyQuery {
   }
 }
 `;
-    const res = await fetch("https://graphql.datocms.com/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        query,
-      }),
+    const res = await API.getAllRecords("617f0fd050eb48d4773ae2be");
+
+    const imagesCID = res.map((r) => {
+      return r.fields[0].value;
     });
 
-    const toOBJ = await res.json();
-    const images = toOBJ.data.allImages;
-    setPhotosList(images);
+    let images = await Promise.all(
+      imagesCID.map(async (id) => {
+        let img = await API.getMedia(id);
+        return {
+          sm: img.sm.url,
+          md: img.md.url,
+          raw: img.raw.url,
+        };
+      })
+    );
+
+    setPhotosList(images.sort((a, b) => (Math.random() >= 0.5 ? -1 : 1)));
   };
 
   return [photosList, loadPhotos];

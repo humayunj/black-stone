@@ -9,7 +9,7 @@ function Placeholder(props) {
 
   let blockProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: .4,
     },
     to: { opacity: 1 },
     onRest: () => setReset((state) => !state),

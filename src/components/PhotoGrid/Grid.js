@@ -6,9 +6,36 @@ import PhotoModal from "../PhotoGrid/PhotoModal";
 import { useState } from "react";
 
 export function Footer(props) {
-  return <div className={styles.footer}>
-    aesthetics <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
-  </div>;
+  return (
+    <a
+      className={styles.footer}
+      href="https://api-fluidcms.herokuapp.com/"
+      style={{
+        textDecoration: "none",
+        cursor: "pointer",
+        width: "max-content",
+      }}
+      target="_blank"
+    >
+      FluidCMS{" "}
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-heart"
+        >
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </span>
+    </a>
+  );
 }
 
 export default function PhotoGrid(props) {
@@ -23,12 +50,9 @@ export default function PhotoGrid(props) {
       <div className={styles.grid}>
         {photos
           ? photos.map((img, ind) => (
-              <Photo
-                photoSrc={img.imageMain.url}
-                showModal={() => setModalIndex(ind)}
-              />
+              <Photo photoSrc={img.md} showModal={() => setModalIndex(ind)} />
             ))
-          : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => <Photo photoSrc="" />)}
+          : [...new Array(10).keys()].map(() => <Photo photoSrc="" />)}
       </div>
       <Footer />
       {photos && modalIndex > -1 && (
