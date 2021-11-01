@@ -41,7 +41,7 @@ export default function Photo(props) {
           }
           ref={imgEl}
           className={`${styles.img} `}
-          src={`${props.photoSrc}?w=150`}
+          src={`${props.photoSrc}`}
           onLoad={() => setLoading(false)}
           onClick={props.showModal}
         />

@@ -50,7 +50,7 @@ export default function PhotoGrid(props) {
       <div className={styles.grid}>
         {photos
           ? photos.map((img, ind) => (
-              <Photo photoSrc={img.md} showModal={() => setModalIndex(ind)} />
+              <Photo photoSrc={img.sm} showModal={() => setModalIndex(ind)} />
             ))
           : [...new Array(10).keys()].map(() => <Photo photoSrc="" />)}
       </div>
