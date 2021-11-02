@@ -4,9 +4,13 @@ export var ModelFieldType;
     ModelFieldType[ModelFieldType["Unkown"] = -1] = "Unkown";
     ModelFieldType[ModelFieldType["Text"] = 0] = "Text";
 })(ModelFieldType || (ModelFieldType = {}));
-export async function getField(token, uid) {
+export async function getField(token, identifier, modelIdentifier) {
     try {
-        let data = await API.get(`/field/${uid}`);
+        let data = await API.get(`/field/${identifier}/${modelIdentifier}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
         const m = data;
         let respField = {
             uid: m._id,
@@ -24,9 +28,9 @@ export async function getField(token, uid) {
         throw er;
     }
 }
-export async function deleteField(token, uid) {
+export async function deleteField(token, identifier, modelIdentifier) {
     try {
-        let data = await API.delete(`/field/${uid}`, {
+        let data = await API.delete(`/field/${identifier}/${modelIdentifier}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -37,10 +41,9 @@ export async function deleteField(token, uid) {
         throw er;
     }
 }
-export async function createField(token, modelID, fieldsData) {
+export async function createField(token, modelIdentifier, fieldsData) {
     try {
-        let data = await API.post(`/field`, {
-            model_id: modelID,
+        let data = await API.post(`/field/${modelIdentifier}`, {
             alias: fieldsData.identifier,
             name: fieldsData.title,
             field_type: fieldsData.type,
@@ -65,9 +68,9 @@ export async function createField(token, modelID, fieldsData) {
         throw er;
     }
 }
-export async function updateField(token, fieldID, fieldsData) {
+export async function updateField(token, fieldIdentifier, modelIdentifier, fieldsData) {
     try {
-        let data = await API.patch(`/field/${fieldID}`, {
+        let data = await API.patch(`/field/${fieldIdentifier}/${modelIdentifier}`, {
             alias: fieldsData.identifier,
             name: fieldsData.title,
             field_type: fieldsData.type,

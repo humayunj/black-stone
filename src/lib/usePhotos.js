@@ -17,7 +17,7 @@ query MyQuery {
   }
 }
 `;
-    const res = await API.getAllRecords("617f0fd050eb48d4773ae2be");
+    const res = await API.getAllRecords("image");
 
     const imagesCID = res.map((r) => {
       return r.fields[0].value;

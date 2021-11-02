@@ -3,11 +3,11 @@ import { getModel, getModels, updateModel, deleteModel, createModel as _createMo
 import { createRecord, deleteMultipleRecords, deleteRecord, getMedia, getRecord, getRecords, updateRecord, uploadRecordImage, } from "./record";
 export class FluidCMS {
     constructor(token) {
-        this.updateModel = (modelUID, fieldsData) => {
-            return updateModel(this.token, modelUID, fieldsData);
+        this.updateModel = (modelIdentifier, fieldsData) => {
+            return updateModel(this.token, modelIdentifier, fieldsData);
         };
-        this.deleteModel = (modelUID) => {
-            return deleteModel(this.token, modelUID);
+        this.deleteModel = (modelIdentifier) => {
+            return deleteModel(this.token, modelIdentifier);
         };
         this.token = token;
     }
@@ -16,8 +16,8 @@ export class FluidCMS {
      * @param uid Model Unique ID
      * @returns Promise whic resolve to IModel or rejected with APIResponseError
      */
-    getModel(uid) {
-        return getModel(this.token, uid);
+    getModel(modelIdentifier) {
+        return getModel(this.token, modelIdentifier);
     }
     createModel(fieldsData) {
         return _createModel(this.token, fieldsData);
@@ -25,23 +25,23 @@ export class FluidCMS {
     getModels() {
         return getModels(this.token, this.token);
     }
-    createField(modelID, fieldsData) {
-        return createField(this.token, modelID, fieldsData);
+    createField(modelIdentifier, fieldsData) {
+        return createField(this.token, modelIdentifier, fieldsData);
     }
-    updateField(fieldID, fieldsData) {
-        return updateField(this.token, fieldID, fieldsData);
+    updateField(fieldIdentifier, modelIdentifier, fieldsData) {
+        return updateField(this.token, fieldIdentifier, modelIdentifier, fieldsData);
     }
-    getField(fieldID) {
-        return getField(this.token, fieldID);
+    getField(fieldIdentifier, modelIdentifier) {
+        return getField(this.token, fieldIdentifier, modelIdentifier);
     }
-    deleteField(fieldID) {
-        return deleteField(this.token, fieldID);
+    deleteField(fieldIdentifier, modelIdentifier) {
+        return deleteField(this.token, fieldIdentifier, modelIdentifier);
     }
-    createRecord(modelUID, fieldsData) {
-        return createRecord(this.token, modelUID, fieldsData);
+    createRecord(modelIdentifier, fieldsData) {
+        return createRecord(this.token, modelIdentifier, fieldsData);
     }
-    updateRecord(recordIUD, fieldsData) {
-        return updateRecord(this.token, recordIUD, fieldsData);
+    updateRecord(recordUID, fieldsData) {
+        return updateRecord(this.token, recordUID, fieldsData);
     }
     deleteRecord(recordUID) {
         return deleteRecord(this.token, recordUID);
@@ -58,7 +58,7 @@ export class FluidCMS {
     getRecord(recordUID) {
         return getRecord(this.token, recordUID);
     }
-    getAllRecords(modelUID) {
-        return getRecords(this.token, modelUID);
+    getAllRecords(modelIdentifier) {
+        return getRecords(this.token, modelIdentifier);
     }
 }

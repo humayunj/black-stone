@@ -8,7 +8,7 @@ export async function getRecord(token, uid) {
         });
         let respRecord = {
             uid: uid,
-            modelId: data.model_id,
+            modelIdentifier: data.model_alias,
             fields: data.fields.map((f) => ({
                 fieldId: f.field_id,
                 value: f.value,
@@ -20,9 +20,9 @@ export async function getRecord(token, uid) {
         throw er;
     }
 }
-export async function getRecords(token, modelUID) {
+export async function getRecords(token, modelIdentifier) {
     try {
-        let data = await API.get(`/record/all/${modelUID}`, {
+        let data = await API.get(`/record/all/${modelIdentifier}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -32,9 +32,9 @@ export async function getRecords(token, modelUID) {
         for (let m of records) {
             respRecords.push({
                 uid: m._id,
-                modelId: modelUID,
+                modelIdentifier: modelIdentifier,
                 fields: m.fields.map((f) => ({
-                    fieldId: f.field_id,
+                    fieldIdentifier: f.field_alias,
                     value: f.value,
                 })),
             });
@@ -49,7 +49,7 @@ export async function updateRecord(token, recordUID, fieldsData) {
     try {
         let data = await API.patch("/record/" + recordUID, {
             fields: fieldsData.map((f, i) => ({
-                field_id: f.fieldId,
+                field_alias: f.fieldIdentifier,
                 value: f.value,
             })),
         }, {
@@ -63,12 +63,11 @@ export async function updateRecord(token, recordUID, fieldsData) {
         throw er;
     }
 }
-export async function createRecord(token, modelId, fieldsData) {
+export async function createRecord(token, modelIdentifier, fieldsData) {
     try {
-        let data = await API.post("/record", {
-            model_id: modelId,
+        let data = await API.post(`/record/${modelIdentifier}`, {
             fields: fieldsData.map((f, i) => ({
-                field_id: f.fieldId,
+                field_alias: f.fieldIdentifier,
                 value: f.value,
             })),
         }, {

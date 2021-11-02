@@ -1,14 +1,14 @@
 import { API, APIResponseError } from "./API";
-export async function getModel(token, uid) {
+export async function getModel(token, identifier) {
     try {
-        let data = await API.get(`/model/${uid}`, {
+        let data = await API.get(`/model/${identifier}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         });
         const m = data.model;
         let respModel = {
-            uid: uid,
+            uid: m._id,
             title: m.name,
             identifier: m.alias,
             fields: m.fields.map((f) => ({
@@ -60,9 +60,9 @@ export async function getModels(token, projectId) {
         throw er;
     }
 }
-export async function updateModel(token, modelUID, fieldsData) {
+export async function updateModel(token, identifier, fieldsData) {
     try {
-        let data = await API.patch("/model/" + modelUID, {
+        let data = await API.patch("/model/" + identifier, {
             name: fieldsData.title,
             alias: fieldsData.identifier,
         }, {
@@ -94,9 +94,9 @@ export async function createModel(token, fieldsData) {
         throw er;
     }
 }
-export async function deleteModel(token, modelUID) {
+export async function deleteModel(token, identifier) {
     try {
-        let data = await API.delete("/model/" + modelUID, {
+        let data = await API.delete("/model/" + identifier, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

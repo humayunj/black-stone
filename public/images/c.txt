@@ -1,0 +1,1 @@
+linear-gradient(0deg, #0003, #000d)
