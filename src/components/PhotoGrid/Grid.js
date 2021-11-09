@@ -9,7 +9,7 @@ export function Footer(props) {
   return (
     <a
       className={styles.footer}
-      href="https://api-fluidcms.herokuapp.com/"
+      href="https://fluidcms.vercel.app"
       style={{
         textDecoration: "none",
         cursor: "pointer",

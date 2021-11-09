@@ -18,9 +18,9 @@ query MyQuery {
 }
 `;
     const res = await API.getAllRecords("image");
-
+  console.log(res);
     const imagesCID = res.map((r) => {
-      return r.fields[0].value;
+      return r.fields.imagessss;
     });
 
     let images = await Promise.all(

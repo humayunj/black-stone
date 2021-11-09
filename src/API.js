@@ -1,3 +1,3 @@
-const { FluidCMS } = require("./fluidcms-api-local/lib");
+import FluidCMS  from "fluidcms-api";
 
-export default new FluidCMS("sn2xV6AYnsOnJcyyq8fO1");
+export default FluidCMS("sn2xV6AYnsOnJcyyq8fO1");
