@@ -18,21 +18,25 @@ query MyQuery {
 }
 `;
     const res = await API.getAllRecords("image");
-  console.log(res);
     const imagesCID = res.map((r) => {
       return r.fields.imagessss;
     });
 
     let images = await Promise.all(
       imagesCID.map(async (id) => {
-        let img = await API.getMedia(id);
-        return {
-          sm: img.sm.url,
-          md: img.md.url,
-          raw: img.raw.url,
-        };
+        try {
+          let img = await API.getMedia(id);
+          return {
+            sm: img.sm.url.replace("http://", "https://"),
+            md: img.md.url.replace("http://", "https://"),
+            raw: img.raw.url.replace("http://", "https://"),
+          };
+        } catch (er) {
+          return null;
+        }
       })
     );
+    images = images.filter((f) => f != null);
 
     setPhotosList(images.sort((a, b) => (Math.random() >= 0.5 ? -1 : 1)));
   };
