@@ -5125,9 +5125,9 @@ flatten@^1.0.2:
   integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
 
 fluidcms-api@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fluidcms-api/-/fluidcms-api-1.0.3.tgz#03a5991d37951ecfec86a1eba58e245ad2089c38"
-  integrity sha512-j5V++gNvS0qaPtHY3OWpWL8mraDbFmIgf2jyw2DvuYLkYHTDovdPtwSb+HvKIjGX56p1ZQqHqOYc/4yexNgjUA==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/fluidcms-api/-/fluidcms-api-1.0.4.tgz#6b8fd58822774ab5d911d62aebf187f421e2df59"
+  integrity sha512-dMTAD2UE5xZ7yMJIFDN5OdU+1TMR1EYNWRPjJ7/Hf9hfQPBZTbgOu7PAjyTFsXt2LY+0JC9XXjL88Cz5lC7Maw==
   dependencies:
     axios "^0.23.0"
 
